@@ -1,0 +1,845 @@
+#include <iostream>
+using namespace std;
+bool binarySearch(int arr[], int n, int target)
+{
+    int low = 0, high = n - 1;
+    int mid = (low + high) / 2;
+    while (low <= high)
+    {
+        if (arr[mid] == target)
+        {
+            return true;
+        }
+        else if (arr[mid] < target)
+        {
+            low = mid + 1;
+        }
+        else
+        {
+            high = mid - 1;
+        }
+        mid = (low + high) / 2;
+    }
+    return false;
+}
+int findIndex(int arr[], int n, int target)
+{
+    int low = 0, high = n - 1;
+
+    while (low <= high)
+    {
+        int mid = (low + high) / 2;
+        if (arr[mid] == target)
+        {
+            return mid;
+        }
+        else if (arr[mid] < target)
+        {
+            low = mid + 1;
+        }
+        else
+        {
+            high = mid - 1;
+        }
+        mid = (low + high) / 2;
+    }
+    return -1;
+}
+bool isArrayEmpty(int arr[], int n)
+{
+    return n == 0;
+}
+int findMin(int arr[], int n)
+{
+    return arr[0];
+}
+int findMax(int arr[], int n)
+{
+    return arr[n - 1];
+}
+int findMiddle(int arr[], int n)
+{
+    return arr[n / 2];
+}
+int firstGreater(int arr[], int n, int target)
+{
+    int low = 0, high = n - 1, ans = -1;
+    while (low <= high)
+    {
+        int mid = low + (high - low) / 2;
+        if (arr[mid] > target)
+        {
+            ans = arr[mid];
+            high = mid - 1;
+        }
+        else
+        {
+            low = mid + 1;
+        }
+    }
+    return ans;
+}
+int largest(int arr[], int n, int target)
+{
+    int low = 0, high = n - 1, ans = -1;
+    while (low <= high)
+    {
+        int mid = low + (high - low) / 2;
+        if (arr[mid] < target)
+        {
+            ans = arr[mid];
+            low = mid + 1;
+        }
+        else
+        {
+            high = mid - 1;
+        }
+    }
+    return ans;
+}
+int countSmaller(int arr[], int n, int target)
+{
+    int low = 0, high = n - 1, ans = 0;
+    while (low <= high)
+    {
+        int mid = low + (high - low) / 2;
+        if (arr[mid] > target)
+        {
+            target++;
+            high = mid - 1;
+        }
+        else
+        {
+            low = mid + 1;
+        }
+    }
+    return ans;
+}
+int firstGreaterThan100(int arr[], int n, int target)
+{
+    int low = 0, high = n - 1, ans = -1;
+    while (low <= high)
+    {
+        int mid = low + (high - low) / 2;
+        int(arr[mid] > 100)
+        {
+            ans = arr[mid];
+            high = mid - 1;
+        }
+        else
+        {
+            low = mid + 1;
+        }
+    }
+    return ans;
+}
+int lastSmallerThan50(int arr[], int n, int target)
+{
+    int low = 0, high = n - 1, ans = -1;
+    while (low <= high)
+    {
+        int mid = low + (high - low) / 2;
+        if (arr[mid] < 50)
+        {
+            ans = arr[mid];
+            low = mid + 1;
+        }
+        else
+        {
+            high = mid - 1;
+        }
+    }
+    return ans;
+}
+bool binarySearch(int arr[], int n, int target)
+{
+    int low = 0, high = n - 1;
+    while (low <= high)
+    {
+        int mid = (low + high) / 2;
+        if (arr[mid] == target)
+        {
+            return true;
+        }
+        else if (arr[mid] < target)
+        {
+            low = mid + 1;
+        }
+        else
+        {
+            high = mid - 1;
+        }
+    }
+    return false;
+}
+int findIndex(int arr[], int n, int target)
+{
+    int low = 0, high = n - 1;
+    while (low <= high)
+    {
+        int mid = (low + high) / 2;
+        if (arr[mid] == target)
+        {
+            return mid;
+        }
+        else if (arr[mid] < target)
+        {
+            low = mid + 1;
+        }
+        else
+        {
+            high = mid - 1;
+        }
+    }
+    return -1;
+}
+int findMiddle(int arr[], int n)
+{
+    return arr[n / 2];
+}
+int firstOccurence(int arr[], int n, int target)
+{
+    int low = 0, high = n - 1, ans = -1;
+    while (low <= high)
+    {
+        int mid = low + (high - low) / 2;
+        if (arr[mid] == target)
+        {
+            ans = mid;
+            high = mid - 1;
+        }
+        else
+        {
+            low = mid + 1;
+        }
+    }
+    return ans;
+}
+int lastOccurence(int arr[], int n, int target)
+{
+    int low = 0, high = n - 1, ans = -1;
+    while (low <= high)
+    {
+        int mid = low + (high - low) / 2;
+        if (arr[mid] == target)
+        {
+            ans = mid;
+            low = mid + 1;
+        }
+        else if (arr[mid] < target)
+        {
+            high = mid - 1;
+        }
+        else
+        {
+            low = mid + 1;
+        }
+    }
+    return ans;
+}
+int lowerBound(int arr[], int n, int target)
+{
+    int low = 0, high = n - 1, ans = -1;
+    while (low <= high)
+    {
+        int mid = low + (high - low) / 2;
+        if (arr[mid] >= target)
+        {
+            ans = arr[mid];
+            high = mid - 1;
+        }
+        else
+        {
+            low = mid + 1;
+        }
+    }
+    return ans;
+}
+int upperBound(int arr[], int n, int target)
+{
+    int low = 0, high = n - 1, ans = -1;
+    while (low <= high)
+    {
+        if (arr[mid] <= target)
+        {
+            ans = arr[mid];
+            low = mid + 1;
+        }
+        else
+        {
+            high = mid - 1;
+        }
+    }
+    return ans;
+}
+int countOccurance(int arr[], int n, int target)
+{
+    int first = firstOccurence(arr, n, target);
+    if (first == -1)
+    {
+        return 0;
+    }
+    int last = lastOccurence(arr, n, target);
+    return last - first + 1;
+}
+int findMissingNumber(int arr[], int n)
+{
+    int low = 0, high = n - 1;
+    while (low <= high)
+    {
+        int mid = (low + high) / 2;
+        if (arr[mid] == mid)
+        {
+            low mid + 1;
+        }
+        else
+        {
+            high = mid - 1;
+        }
+    }
+    return low + 1;
+}
+int findSmallerst(int arr[], int n)
+{
+    return arr[0];
+}
+int findLargest(int arr[], int n)
+{
+    return arr[n - 1];
+}
+bool isSmallerst(int arr[], int n)
+{
+    return n == 1;
+}
+bool checkFirstLastSame(int arr[], int n)
+{
+    return arr[0] == arr[n - 1];
+}
+int getElementAtIndex(int arr[], int k)
+{
+    return arr[k];
+}
+string checkMiddleEvenOdd(int arr[], int n)
+{
+    return (arr[n / 2] % 2 == 0) ? "even" : "odd";
+}
+int sumFirstLast(int arr[], int n)
+{
+    return arr[0] + arr[n - 1];
+}
+int firstEvenIndex(int arr[], int n)
+{
+    int low = 0, high = n - 1;
+    while (low <= high)
+    {
+        int mid = low + (high - low) / 2;
+        if (mid == 0 || arr[mid - 1] % 2 != 0)
+        {
+            high = mid - 1;
+        }
+        else
+        {
+            low = mid + 1;
+        }
+    }
+    return -1;
+}
+bool hasNegative(int arr[], int n)
+{
+    return arr[0] < 0;
+}
+int lastOdd(int arr[], int n)
+{
+    int low = 0, high = n - 1, ans = -1;
+    while (low <= high)
+    {
+        int mid = low + (high - low) / 2;
+        if (arr[mid] % 2 != 0)
+        {
+            ans = arr[mid];
+            low = mid + 1;
+        }
+        else
+        {
+            high = mid - 1;
+        }
+    }
+    return ans;
+}
+// Check if an element exists in a sorted array
+bool exist(int arr[], int n, int target)
+{
+    int low = 0, high = n - 1;
+    while (low <= high)
+    {
+        int mid = low + (high - low) / 2;
+        if (arr[mid] == target)
+        {
+            return true;
+        }
+        else if (arr[mid] < target)
+        {
+            low = mid + 1;
+        }
+        else
+        {
+            high = mid - 1;
+        }
+    }
+    return false;
+}
+int firstElement(int arr[])
+{
+    return arr[0];
+}
+int lastElement(int arr[])
+{
+
+    return arr[n - 1];
+}
+int middleElement(int arr[])
+{
+    return arr[n / 2];
+}
+int middleindex(int n)
+{
+    return n / 2;
+}
+string middleEvenOdd(int arr[], int n)
+{
+    return arr[n / 2] != 0 ? "Even" : "Odd";
+}
+int smallestElement(int arr[], int n)
+{
+    return arr[0];
+}
+int largestElement(int arr[], int n)
+{
+    return arr[n - 1];
+}
+int sumFirstLast(int arr[], int n)
+{
+    return arr[0] + arr[n - 1];
+}
+int diffFirstLast(int arr[], int n)
+{
+    return arr[n - 1] - arr[0];
+}
+int firstEven(int arr[], int n)
+{
+    for (int i = 0; i < n; i++)
+    {
+        if (arr[i] % 2 == 0)
+        {
+            return arr[i];
+        }
+    }
+    return -1;
+}
+int firstOdd(int arr[], int n)
+{
+    for (int i = 0; i < n; i++)
+    {
+        if (arr[i] % 2 != 0)
+        {
+            return arr[i];
+        }
+    }
+    return -1;
+}
+bool isEvenIndex(int arr[], int n, int target)
+{
+    int low = 0, high = n - 1;
+    while (low <= high)
+    {
+        int mid = low + (high - low) / 2;
+        if (arr[mid] == target)
+        {
+            return mid % 2 == 0;
+        }
+        else if (arr[mid] < target)
+        {
+            low = mid + 1;
+        }
+        else
+        {
+            high = mid - 1;
+        }
+    }
+    return false;
+}
+int lastGreaterThan100(int arr[], int n)
+{
+    return arr[n - 1] > 100;
+}
+bool startsWithNegative(int arr[])
+{
+    return arr[0] < 0;
+}
+int lastOdd(int arr[], int n)
+{
+    for (int i = n - 1; i >= 0; i--)
+    {
+        if (arr[i] % 2 != 0)
+        {
+            return arr[i];
+        }
+    }
+    return -1;
+}
+int lastEven(int arr[], int n)
+{
+    for (int i = n - 1; i >= 0; i--)
+    {
+        if (arr[i] % 2 == 0)
+        {
+            return arr[i];
+        }
+    }
+    return -1;
+}
+bool lastEven1(int arr[], int n)
+{
+    for (int i = n - 1; i >= 0; i--)
+    {
+        if (arr[i] % 2 == 0)
+        {
+            return arr[i];
+        }
+    }
+    return -1;
+}
+bool firstLastEqual(int arr[], int n)
+{
+    return arr[0] == arr[n - 1];
+}
+int secondSmallest(int arr[], int n)
+{
+    return arr[1];
+}
+int secondLargest(int arr[], int n)
+{
+    return arr[n - 2];
+}
+
+bool exist(int arr[], int n, int target)
+{
+    int low = 0, high = n - 1;
+    while (low <= high)
+    {
+        int mid = (low + high) / 2;
+        if (arr[mid] == target)
+        {
+            return true;
+        }
+        else if (arr[mid] < target)
+        {
+            low = mid + 1;
+        }
+        else
+        {
+            high = mid - 1;
+        }
+    }
+    return false;
+}
+int firstElement(int arr[])
+{
+    return arr[0];
+}
+int lastElement(int arr[], int n)
+{
+    return arr[n - 1];
+}
+int middleElement(int arr[], int n)
+{
+    return arr[n / 2];
+}
+
+int middleIndex(int arr[], int n)
+{
+    return n / 2;
+}
+int smallestElement(int arr[])
+{
+    return arr[0];
+}
+int largestElement(int arr[])
+{
+    return arr[n - 1];
+}
+int sumFirstLast(int arr[], int n)
+{
+    return arr[0] + arr[n - 1];
+}
+int diffFirstLast(int arr[], int n)
+{
+    return arr[n - 1] - arr[0];
+}
+bool firstLastEqual(int arr[], int n)
+{
+    return arr[0] == arr[n - 1];
+}
+string middleEvenOdd(int arr[], int n)
+{
+    for (int i = 0; i < n; i++)
+    {
+        if (arr[i] % 2 == 0)
+        {
+            return i;
+        }
+    }
+    return -1;
+}
+int firstOddIndex(int arr[], int n)
+{
+    for (int i = 0; i < n; i++)
+    {
+        if (arr[i] % 2 != 0)
+        {
+            return i;
+        }
+    }
+    return -1;
+}
+int secondSmallest(int arr[], int n)
+{
+    return arr[1];
+}
+int secondLargest(int arr[], int n)
+{
+    return arr[n - 2];
+}
+int middleindexDiv2(int n)
+{
+    return (n / 2) / 2;
+}
+bool lastGreate1rThan100(int arr[], int n)
+{
+    return arr[n - 1] > 100;
+}
+bool startsWithNegative(int arr[], int n)
+{
+    return arr[0] < 0;
+}
+int lastEven(int arr[], int n)
+{
+    for (int i = n - 1; i >= 0; i--)
+    {
+        if (arr[i] % 2 == 0)
+        {
+            return arr[i];
+        }
+    }
+    return -1;
+}
+int firstElement(int arr[])
+{
+    return arr[0];
+}
+int lastElement(int arr[], int n)
+{
+    return arr[n - 1];
+}
+int middleElement(int arr[], int n)
+{
+    return arr[n / 2];
+}
+int middleIndex(int arr[], int n)
+{
+    return n / 2;
+}
+bool isFirstNegative(int arr[], int n)
+{
+    return arr[n / 2];
+}
+bool isLastPositive(int arr[], int n)
+{
+    return arr[n - 1] > 0;
+}
+bool isLastPositive(int arr[], int n)
+{
+    return arr[n - 1] > 0;
+}
+bool isGreaterThanFirst(int arr[], int n, int target)
+{
+    return target > arr[0];
+}
+bool isSmalleerThanLast(int arr[], int n, int target)
+{
+    return target < arr[n - 1];
+}
+int firstPositiveIndex(int arr[], int n)
+{
+    for (int i = 0; i < n; i++)
+    {
+        if (arr[i] > 0)
+        {
+            return i;
+        }
+    }
+    return -1;
+}
+int sumFirstLast(int arr[], int n)
+{
+    return arr[0] + arr[n - 1];
+}
+
+bool isSecondEven(int arr[])
+{
+    return arr[1] % 2 == 0;
+}
+string middleEvenOdd(int arr[], int n)
+{
+    return (arr[n / 2] % 2 == 0) ? "Even" : "Odd";
+}
+int firstOdd(int arr[], int n)
+{
+    for (int i = 0; i < n; i++)
+    {
+        if (arr[i] % 2 != 0)
+        {
+            return arr[i];
+        }
+    }
+    return -1;
+}
+int lastEven(int arr[], int n)
+{
+    for (int i = n - 1; i >= 0; i--)
+    {
+        if (arr[i] % 2 == 0)
+        {
+            return arr[i];
+        }
+    }
+    return -1;
+}
+bool allPositive(int arr[], int n)
+{
+    for (int i = 0; i < n; i++)
+    {
+        if (arr[i] <= 0)
+        {
+            return false;
+        }
+    }
+    return true;
+}
+bool allNegative(int arr[], int n)
+{
+    for (int i = 0; i < n; i++)
+    {
+        if (arr[i] >= 0)
+        {
+            return false;
+        }
+    }
+    return true;
+}
+bool isSingleElement(int arr[], int n)
+{
+    return n == 1;
+}
+bool isEvenLength(int arr[], int n)
+{
+    return n % 2 == 0;
+}
+int diffFirstLast(int arr[], int n)
+{
+    return arr[n - 1] - arr[0];
+}
+bool firstLastEqual(int arr[], int n)
+{
+    return arr[0] == arr[n - 1];
+}
+int secondSmallest(int arr[], int n)
+{
+    return arr[1];
+}
+int secondLargest(int arr[], int n)
+{
+    return arr[n - 2];
+}
+int middle(int n)
+{
+    return n / 2;
+}
+bool middleGreaterThan50(int arr[], int n)
+{
+    return arr[n / 2] > 50;
+}
+int sumOfOddElement(int arr[], int n)
+{
+    int sum = 0;
+    for (int i = 0; i < n; i++)
+    {
+        if (arr[i] % 2 != 0)
+        {
+            sum = sum + arr[i];
+        }
+    }
+    return sum;
+}
+int sumOfEvenElement(int arr[], int n)
+{
+    int sum = 0;
+    for (int i = 0; i < n; i++)
+    {
+        if (arr[i] % 2 == 0)
+        {
+            sum = sum + arr[i];
+        }
+    }
+    return sum;
+}
+bool isMiddleLessThan100(int arr[], int n)
+{
+    return arr[n / 2] < 10;
+}
+int lastPositiveIndex(int arr[], int n)
+{
+    for (int i = n - 1; i >= 0; i--)
+    {
+        if (arr[i] > 0)
+        {
+            return i;
+        }
+    }
+    return -1;
+}
+bool hasZero(int arr[], int n)
+{
+    for (int i = 0; i < n; i++)
+    {
+        if (arr[i] == 0)
+        {
+            return true;
+        }
+    }
+    return false;
+}
+int main()
+{
+    int arr[] = {1, 2, 3, 4, 5};
+    int n = sizeof(arr) / sizeof(arr[0]);
+    int target = 3;
+    // cout<<(findIndex(arr,n,target) ? "Found ": "Not Found");
+    // // . Find the index of a given number
+    // cout<<findIndex(arr,n,target);
+    // 3. Check if a sorted array is empty or not
+    // cout<<isArrayEmpty(arr,n);
+    // 4. Find the minimum element in a sorted array
+    // cout<<findMin(arr,n);
+    // Find the maximum element in a sorted array
+    // cout<<findMax(arr,n);
+    // 6. Find the middle element of an array
+    // cout<<findMiddle(arr,n);
+    // 7. Find the first element greater than a given number
+    // 1. Find the first element in an array greater than 100
+    // int arr[]={10,20,50,80,101,120,150};
+    // int n = sizeof(arr)/sizeof(arr[0]);
+    // cout<<"First element greater than 100 : "<<firstGreaterThan100(arr,n);
+    // Find the last element in an array smaller than 50
+    // 1. Find if a number exists in a sorted array
+}
